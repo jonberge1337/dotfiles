@@ -36,6 +36,7 @@ Plug 'VincentCordobes/vim-translate'
 Plug 'junegunn/vader.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'skaji/syntax-check-perl'
+Plug 'metakirby5/codi.vim'
 
 """""""""""""""""""""""""" Esquema de colores
 Plug 'flazz/vim-colorschemes'
@@ -163,8 +164,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:EasyMotion_leader_key = ',,'
 
 "==================== Ejecutar ======================
-autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-autocmd filetype c nnoremap <F5> :w <bar> !gcc -std=c99 -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
+" autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=c++17 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
+autocmd filetype c nnoremap <F5> :w <bar> !gcc -std=c11 -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
 autocmd filetype java nnoremap <F5> :w <bar> !clear;javac % && java -enableassertions %:p <CR>
 autocmd filetype python nnoremap <F5> :w <bar> !clear;python3 % <CR>
 autocmd filetype perl nnoremap <F5> :w <bar> !clear;perl % <CR>
