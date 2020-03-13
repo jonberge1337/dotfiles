@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-$path = "/home/jb/";
+my $path = "/home/jb/";
 
 symlink("vim/vimrc",   "$path.vimrc");
 mkdir("$path.vim");

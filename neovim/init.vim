@@ -39,6 +39,7 @@ Plug 'vim-perl/vim-perl'
 Plug 'skaji/syntax-check-perl'
 Plug 'metakirby5/codi.vim'
 Plug 'majutsushi/tagbar'
+Plug 'vimwiki/vimwiki'
 
 """""""""""""""""""""""""" Esquema de colores
 " Plug 'flazz/vim-colorschemes'
@@ -150,6 +151,8 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 "==================== EasyMotion ====================
 let g:EasyMotion_leader_key = ',,'
 
+"==================== Markdown ====================
+let g:polyglot_disabled = ['md', 'markdown']
 
 "==================== Leader ======================
 let mapleader = ","
@@ -200,3 +203,4 @@ endfunction
 
 nnoremap <leader>te :call TermToggle(12)<CR>
 tnoremap <Esc> <C-\><C-n>
+
