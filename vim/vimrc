@@ -32,14 +32,17 @@ Plug 'dbeniamine/cheat.sh-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-afterimage'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'VincentCordobes/vim-translate'
 Plug 'junegunn/vader.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'skaji/syntax-check-perl'
 Plug 'metakirby5/codi.vim'
+Plug 'majutsushi/tagbar'
+Plug 'vimwiki/vimwiki'
+Plug 'voldikss/vim-translator'
 
 """""""""""""""""""""""""" Esquema de colores
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 
 """""""""""""""""""""""""" Juegos vim
 Plug 'johngrib/vim-game-code-break'
@@ -163,24 +166,38 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 "==================== EasyMotion ====================
 let g:EasyMotion_leader_key = ',,'
 
-"==================== Ejecutar ======================
-" autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=gnu++14 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-autocmd filetype cpp nnoremap <F5> :w <bar> !clear && g++ -std=c++17 -O2 % -o %:p:h/%:t:r.exe && ./%:r.exe<CR>
-autocmd filetype c nnoremap <F5> :w <bar> !gcc -std=c11 -lm % -o %:p:h/%:t:r.out && ./%:r.out<CR>
-autocmd filetype java nnoremap <F5> :w <bar> !clear;javac % && java -enableassertions %:p <CR>
-autocmd filetype python nnoremap <F5> :w <bar> !clear;python3 % <CR>
-autocmd filetype perl nnoremap <F5> :w <bar> !clear;perl % <CR>
-autocmd filetype go nnoremap <F5> :w <bar> !go build % && ./%:p <CR>
-autocmd filetype *.md inoremap <CR> <SPACE><SPACE><CR>
+"==================== Markdown ====================
+let g:polyglot_disabled = ['md', 'markdown']
 
 "==================== Leader ======================
 let mapleader = ","
 
+"==================== Perl ======================
+let g:ale_linters = {
+            \ 'perl': ['syntax-check', 'perlcritic'],
+            \}
+
+"==================== vim-translator ======================
+let g:translator_target_lang = 'es'
+
+"==================== coc ====================
+let g:coc_global_extensions = [
+            \ 'coc-json',
+            \ 'coc-yank',
+            \ 'coc-marketplace',
+            \ 'coc-clangd',
+            \ 'coc-vimlsp',
+            \ 'coc-sql',
+            \ 'coc-snippets',
+            \ 'coc-html',
+            \ 'coc-emmet',
+            \ 'coc-python'
+            \]
+nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
+
+"==================== Ejecutar ======================
+nnoremap <F5> :w<CR> :make<CR>
+
 "==================== Cursor ======================
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
-
-"==================== Perl ======================
-let g:ale_linters = {
-\ 'perl': ['syntax-check', 'perlcritic'],
-\}

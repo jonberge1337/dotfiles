@@ -8,17 +8,16 @@ call plug#begin('~/.local/share/nvim/plugged')
 """""""""""""""""""""""""" Herramientas
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 " Plug 'SirVer/ultisnips'
 Plug 'alcesleo/vim-uppercase-sql'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
@@ -28,18 +27,17 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'aklt/plantuml-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jiangmiao/auto-pairs'
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-afterimage'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'VincentCordobes/vim-translate'
 Plug 'junegunn/vader.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'skaji/syntax-check-perl'
 Plug 'metakirby5/codi.vim'
 Plug 'majutsushi/tagbar'
 Plug 'vimwiki/vimwiki'
+Plug 'voldikss/vim-translator'
 
 """""""""""""""""""""""""" Esquema de colores
 " Plug 'flazz/vim-colorschemes'
@@ -162,6 +160,9 @@ let g:ale_linters = {
             \ 'perl': ['syntax-check', 'perlcritic'],
             \}
 
+"==================== vim-translator ======================
+let g:translator_target_lang = 'es'
+
 "==================== coc ====================
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -171,6 +172,8 @@ let g:coc_global_extensions = [
             \ 'coc-vimlsp',
             \ 'coc-sql',
             \ 'coc-snippets',
+            \ 'coc-html',
+            \ 'coc-emmet',
             \ 'coc-python'
             \]
 nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
@@ -204,3 +207,5 @@ endfunction
 nnoremap <leader>te :call TermToggle(12)<CR>
 tnoremap <Esc> <C-\><C-n>
 
+" let g:vimwiki_list = [{'path': '~/vimwiki/',
+"                       \ 'syntax': 'markdown', 'ext': '.wiki'}]
