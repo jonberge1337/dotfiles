@@ -198,6 +198,8 @@ nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
 "==================== Ejecutar ======================
 nnoremap <F5> :w<CR> :make<CR>
 
+tnoremap <Esc> <C-\><C-n>
+
 "==================== Cursor ======================
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
