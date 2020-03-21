@@ -1,1 +1,1 @@
-setlocal makeprg=perl\ %
+nnoremap <buffer> <F5> :w<CR> :!clear && perl %<CR>

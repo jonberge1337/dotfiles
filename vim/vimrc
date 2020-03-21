@@ -16,9 +16,7 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
-" Plug 'SirVer/ultisnips'
 Plug 'alcesleo/vim-uppercase-sql'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
@@ -32,16 +30,17 @@ Plug 'dbeniamine/cheat.sh-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-afterimage'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'junegunn/vader.vim'
 Plug 'vim-perl/vim-perl'
 Plug 'skaji/syntax-check-perl'
 Plug 'metakirby5/codi.vim'
 Plug 'majutsushi/tagbar'
 Plug 'vimwiki/vimwiki'
 Plug 'voldikss/vim-translator'
+Plug 'machakann/vim-highlightedyank'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'idanarye/vim-vebugger'
 
 """""""""""""""""""""""""" Esquema de colores
-" Plug 'flazz/vim-colorschemes'
 Plug 'morhetz/gruvbox'
 
 """""""""""""""""""""""""" Juegos vim
@@ -194,10 +193,6 @@ let g:coc_global_extensions = [
             \ 'coc-python'
             \]
 nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
-
-"==================== Ejecutar ======================
-nnoremap <F5> :w<CR> :make<CR>
-
 tnoremap <Esc> <C-\><C-n>
 
 "==================== Cursor ======================

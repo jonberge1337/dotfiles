@@ -1,1 +1,2 @@
-setlocal makeprg=python3\ %
+nnoremap <buffer> <F5> :w<CR>:te python3 %<CR>i
+

@@ -1,1 +1,1 @@
-set makeprg = go\ build\ %\ &&\ ./%:p
+nnoremap <buffer> <F5> :w<CR> :!clear && go build % && ./%:p<CR>

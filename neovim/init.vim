@@ -1,5 +1,3 @@
-set nocompatible
-
 call plug#begin('~/.local/share/nvim/plugged')
 
 """""""""" Plugins """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -38,6 +36,8 @@ Plug 'metakirby5/codi.vim'
 Plug 'majutsushi/tagbar'
 Plug 'vimwiki/vimwiki'
 Plug 'voldikss/vim-translator'
+Plug 'idanarye/vim-vebugger'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 """""""""""""""""""""""""" Esquema de colores
 " Plug 'flazz/vim-colorschemes'
@@ -100,6 +100,9 @@ set undodir=~/.config/nvim/undodir
 
 " Poder hacer scroll en vim normal
 set mouse=a
+
+" Dividir abajo
+set splitbelow
 
 """" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
@@ -178,9 +181,6 @@ let g:coc_global_extensions = [
             \]
 nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
 
-"==================== Ejecutar ======================
-nnoremap <F5> :w<CR> :make<CR>
-
 "==================== Terminal ====================
 augroup TerminalStuff
    au!
@@ -206,6 +206,3 @@ endfunction
 
 nnoremap <leader>te :call TermToggle(12)<CR>
 tnoremap <Esc> <C-\><C-n>
-
-" let g:vimwiki_list = [{'path': '~/vimwiki/',
-"                       \ 'syntax': 'markdown', 'ext': '.wiki'}]
