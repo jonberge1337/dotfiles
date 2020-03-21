@@ -1,4 +1,5 @@
 #!/bin/sh
 
+xrdb -load .Xresources
 numlockx&
 exec i3
