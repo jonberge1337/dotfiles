@@ -1620,6 +1620,14 @@ c.url.searchengines = {
     'DEFAULT': 'https://www.google.com/search?q={}',
     'yt': 'https://www.youtube.com/results?search_query={}',
     "wa": "https://wiki.archlinux.org/?search={}",
+    "wes": "https://es.wikipedia.org/wiki/{}",
+    "esenw": "https://www.wordreference.com/es/en/translation.asp?spen={}",
+    "enesw": "https://www.wordreference.com/es/translation.asp?tranword={}",
+    "eseu": "https://hiztegiak.elhuyar.eus/es_eu/{}",
+    "eues": "https://hiztegiak.elhuyar.eus/eu/{}",
+    "enes": "https://translate.google.com/#en/es/{}",
+    "esen": "https://translate.google.com/#es/en/{}",
+    "git": "https://github.com/search?q={}",
     'duck': 'https://duckduckgo.com/?q={}'
 }
 
@@ -1658,6 +1666,9 @@ c.url.searchengines = {
 # c.zoom.text_only = False
 
 ## Bindings for normal mode
+config.bind(",t", ':open -t')
+config.bind(",p", ':open -p')
+config.bind(",m", 'spawn mpv {url}')
 # config.bind("'", 'enter-mode jump_mark')
 # config.bind('+', 'zoom-in')
 # config.bind('-', 'zoom-out')
