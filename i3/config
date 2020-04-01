@@ -21,8 +21,10 @@ bindsym $mod+Control+Escape exec i3-msg exit
 bindsym $mod+Shift+Escape exec pkill -15 Xorg
 
 # screenshot printscreen to ~/home
-bindsym Print exec --no-startup-id scrot
-
+# bindsym Print exec scrot ~/Pictures/scrot-%Y-%m-%d-%H-%M-%S.png
+bindsym Print --release exec --no-startup-id "scrot 'scrot-%d-%m-%Y_%H:%M:%S_$wx$h.png' --exec 'mv $f ~/Pictures/'"
+bindsym $mod+Print --release exec --no-startup-id "scrot --select 'scrot-%d-%m-%Y_%H:%M:%S_$wx$h.png' --exec 'mv $f ~/Pictures/'"
+# bindsym $mod+Print exec scrot -s ~/Pictures/scrot-%Y-%m-%d-%H-%M-%S.png
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 

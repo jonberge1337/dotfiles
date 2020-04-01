@@ -1628,6 +1628,7 @@ c.url.searchengines = {
     "enes": "https://translate.google.com/#en/es/{}",
     "esen": "https://translate.google.com/#es/en/{}",
     "git": "https://github.com/search?q={}",
+    "cpan": "https://metacpan.org/search?q={}",
     'duck': 'https://duckduckgo.com/?q={}'
 }
 

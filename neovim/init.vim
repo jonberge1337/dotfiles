@@ -38,6 +38,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'voldikss/vim-translator'
 Plug 'idanarye/vim-vebugger'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Chiel92/vim-autoformat'
 
 """""""""""""""""""""""""" Esquema de colores
 " Plug 'flazz/vim-colorschemes'
@@ -68,6 +69,7 @@ colorscheme gruvbox
 
 "enumerar las lineas
 set number
+set relativenumber
 
 "Muestra la linea de status
 "teniendo Vim-Airline muestra la generada po dicho plugin
@@ -135,6 +137,9 @@ set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
 set hlsearch    "Resalta las busquedas
 
 "##############################################################################"
+
+"==================== editorconfig ====================
+let g:EditorConfig_preserve_formatoptions = 1
 
 "==================== airline ====================
 " Para mostrar el buffer abierto arriba
@@ -206,3 +211,4 @@ endfunction
 
 nnoremap <leader>te :call TermToggle(12)<CR>
 tnoremap <Esc> <C-\><C-n>
+
