@@ -1,4 +1,4 @@
-source /usr/share/zsh/share/antigen.zsh
+source /home/jb/.antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -10,6 +10,7 @@ antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
 antigen bundle extract
+antigen bundle cpanm
 
 # Syntax highlighting bundle.
 antigen bundle zdharma/fast-syntax-highlighting
@@ -49,3 +50,10 @@ transfer() {
 subirAsciinema() {
     curl -v -u $USER:$(cat ~/.config/asciinema/install-id) https://asciinema.org/api/asciicasts -F asciicast=@"$1"
 }
+
+PATH="/home/jb/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jb/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jb/perl5"; export PERL_MM_OPT;
+# PERL5LIB="."; export PERL5LIB;
