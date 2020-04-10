@@ -2,4 +2,5 @@
 
 xrdb -load .Xresources
 numlockx&
+urxvtd&
 exec i3
