@@ -6,3 +6,15 @@
 [[tutoriales]]
 [[archivos]]
 [[array]]
+[[exportar constantes]]
+package Auth;
+use strict;
+use warnings;
+
+use base 'Exporter';
+
+use constant TOKEN => 'AQUi VA EL TOKEN';
+
+our @EXPORT_OK = ('TOKEN');
+
+1;
