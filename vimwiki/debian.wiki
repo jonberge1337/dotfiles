@@ -1,0 +1,29 @@
+= debian =
+== programas ==
+- xorg
+- nvidia-driver
+- linux-firmware
+- firmware-realtek
+- scrot
+- npm
+- yarn
+- neovim
+- ruby-neovim
+- sudo npm install -g neovim
+- python3-dev
+- libperl-dev
+- i3
+- i3blocks
+- clangd
+- mpv
+- progress
+- zathura
+- udisks2
+- sxiv
+- transmission-gtk
+- perltidy
+- clang-format
+- pulseaudio # si no en i3blocks lo del audio dara error
+
+instalacion debian despues de instalar firmware-realtek si falta rtl8125a-3
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947356

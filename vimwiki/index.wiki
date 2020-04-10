@@ -1,0 +1,7 @@
+= indice =
+[[arch|instalación archlinux]]
+[[debian]]
+[[telegram]]
+[[docker]]
+[[perl]]
+[[imagemagick]]
