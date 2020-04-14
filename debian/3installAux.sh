@@ -2,7 +2,7 @@ sudo aptitude install i3-wm -y
 sudo aptitude install rofi -y
 sudo aptitude install mlocate -y
 sudo aptitude install p7zip-full -y
-sudo aptitude install mpv -y
+sudo aptitude install mpv -youtube-dl -y
 sudo aptitude install qutebrowser -y
 sudo aptitude install chromium -y
 sudo aptitude install vlc -y
@@ -52,6 +52,10 @@ cd nerd-fonts
 ./install.sh
 cd ..
 rm -rf nerd-fonts
+
+#youtube-dl
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 
 #brave-browser
 sudo apt install apt-transport-https curl
