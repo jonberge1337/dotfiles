@@ -18,22 +18,22 @@ createDir("$home/.config/nvim/undodir");
 system("nvim +PlugInstall +qall");
 createLink( "$home/dotfiles/vimwiki", "$home/vimwiki" );
 createDir("$home/.config/coc");
-createLink( "$home/dotfiles/neovim/ultisnips",
-    "$home/.config/coc/ultisnips" );
+createLink( "$home/dotfiles/neovim/ultisnips/",
+    "$home/.config/coc/ultisnips/" );
 createDir("$home/.config/qutebrowser");
 createLink(
     "$home/dotfiles/qutebrowser/config.py",
     "$home/.config/qutebrowser/config.py"
 );
-createDir("$home/.config/i3");
-createLink( "$home/dotfiles/i3", "$home/.config/i3" );
+createLink( "$home/dotfiles/i3/", "$home/.config/i3/" );
 
 sub createLink {
     my $orig = shift;
     my $new  = shift;
-    if ( !-e "$new" ) {
-        symlink( $orig, $new );
+    if ( -e "$new" ) {
+        unlink( $new );
     }
+    symlink( $orig, $new );
 }
 
 sub createDir {

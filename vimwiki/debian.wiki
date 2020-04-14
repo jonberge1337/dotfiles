@@ -25,5 +25,9 @@
 - clang-format
 - pulseaudio # si no en i3blocks lo del audio dara error
 
-instalacion debian despues de instalar firmware-realtek si falta rtl8125a-3
+==== instalacion debian despues de instalar firmware-realtek si falta rtl8125a-3 ====
+{{{bash
+cd /lib/firmware/rtl_nic/
+sudo wget https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/rtl_nic/rtl8125a-3.fw
+}}}
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=947356

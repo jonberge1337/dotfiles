@@ -134,8 +134,8 @@ if (my $${2:exception} = $@) {
 
 endsnippet
 
-snippet for "for(0..9)"
-for (${1:0..9}) {
+snippet for "for(@array)"
+for (${1:@array}) {
 	$2
 }
 endsnippet
@@ -147,8 +147,8 @@ for (my $${1:var} = 0; $$1 < ${2:expression}; $$1++) {
 endsnippet
 
 snippet fore "foreach"
-foreach ${1:my $${2:x}} (@${3:array}) {
-	${4:# body...}
+foreach my $${1:x} (@${2:array}) {
+	${3:# body...}
 }
 
 endsnippet
