@@ -14,9 +14,15 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-dadbod'
 Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
 Plug 'alcesleo/vim-uppercase-sql'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'alvan/vim-closetag'
 Plug 'tpope/vim-surround'
@@ -24,7 +30,6 @@ Plug 'jceb/vim-orgmode'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'aklt/plantuml-syntax'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dbeniamine/cheat.sh-vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-afterimage'
@@ -39,6 +44,9 @@ Plug 'voldikss/vim-translator'
 Plug 'idanarye/vim-vebugger'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Chiel92/vim-autoformat'
+Plug 'c9s/perlomni.vim'
+Plug 'mileszs/ack.vim'
+Plug 'machakann/vim-highlightedyank'
 
 """""""""""""""""""""""""" Esquema de colores
 " Plug 'flazz/vim-colorschemes'
@@ -106,6 +114,9 @@ set mouse=a
 " Dividir abajo
 set splitbelow
 
+" No seleccionar al autcompletar
+set completeopt=longest,menuone
+
 """" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
 cnoreabbrev W w
@@ -171,25 +182,38 @@ let g:ale_linters = {
 "==================== vim-translator ======================
 let g:translator_target_lang = 'es'
 
-"==================== coc ====================
-let g:coc_global_extensions = [
-            \ 'coc-json',
-            \ 'coc-yank',
-            \ 'coc-marketplace',
-            \ 'coc-clangd',
-            \ 'coc-vimlsp',
-            \ 'coc-sql',
-            \ 'coc-snippets',
-            \ 'coc-html',
-            \ 'coc-emmet',
-            \ 'coc-python'
-            \]
-nnoremap <silent> <leader>p :<C-u>CocList -A --normal yank<CR>
+"==================== vim-lsp ======================
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+            \ 'name': 'buffer',
+            \ 'whitelist': ['*'],
+            \ 'blacklist': ['go'],
+            \ 'completor': function('asyncomplete#sources#buffer#completor'),
+            \ 'config': {
+            \    'max_buffer_size': 5000000,
+            \  },
+            \ }))
+let g:asyncomplete_popup_delay = 0
+inoremap <expr> <CR> pumvisible() ? asyncomplete#close_popup() . "\<CR>" : "\<CR>"
+if has('python3')
+    let g:UltiSnipsExpandTrigger="<C-y>"
+    let g:UltiSnipsJumpForwardTrigger="<C-j>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+    call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+                \ 'name': 'ultisnips',
+                \ 'whitelist': ['*'],
+                \ 'completor': function('asyncomplete#sources#ultisnips#completor'),
+                \ }))
+endif
+let g:lsp_settings = {
+            \  'perl-languageserver': {
+            \    'disabled': 1,
+            \   }
+            \}
 
 "==================== Terminal ====================
 augroup TerminalStuff
-   au!
-  autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
+    au!
+    autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no
 augroup END
 
 let g:term_buf = 0
