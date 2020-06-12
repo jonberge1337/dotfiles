@@ -1,0 +1,31 @@
+= Instalacion =
+- Descargar la imagen de raspbian
+{{{bash
+curl -L -o raspbian_lite.zip https://downloads.raspberrypi.org/raspbian_lite_latest
+}}}
+- Quemar la imagen en micro sd
+{{{bash
+unzip -p raspbian_lite.zip | sudo dd of=/dev/sdb bs=4M conv=fsync
+}}}
+- Montar micro sd y crear el fichero ssh en la particion boot
+{{{bash
+udisksctl mount -b /dev/sdb1
+cd /media/jb/boot
+touch ssh
+}}}
+= pi hole =
+- Instalacion pi hole
+{{{bash
+curl -sSL https://install.pi-hole.net | bash
+}}}
+- url pi-hole https://ip/admin
+- [[https://192.168.0.15/admin]]
+= ip estatica =
+- añadimos al archivo /etc/dhcpcd.conf
+{{{bash
+interface eth0
+# ip por la que va a escuchar con su mascara
+static ip_address=192.168.0.100/24
+# el gateway puerta de enlace
+static routers=192.168.0.1
+}}}

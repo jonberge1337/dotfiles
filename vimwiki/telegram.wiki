@@ -13,7 +13,7 @@ curl -s -X POST https://api.telegram.org/bot<TOKEN>/sendMessage\
 {{{bash
 curl -X  POST "https://api.telegram.org/bot"<TOKEN>"/sendPhoto"\
 -F chat_id="<ID>"\
--F photo="@<RUTA DE NUESTRA IMAGEN>"
+-F photo="@<RUTA DE NUESTRA IMAGEN>"\
 -F caption="<TEXTO>"
 }}}
 === audio ===

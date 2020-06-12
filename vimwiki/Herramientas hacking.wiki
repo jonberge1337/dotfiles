@@ -1,0 +1,7 @@
+= Herramientas =
+- [[https://github.com/htr-tech/zphisher|zphisher]]
+- [[https://github.com/UndeadSec/EvilURL|EvilUrl]]
+- [[https://github.com/gophish/gophish|gophish]]
+- [[https://github.com/hashcat/hashcat|hashcat]]
+- [[https://shop.hak5.org/|pagina comprar hardware hacking]]
+- [[https://github.com/LionSec/katoolin|katoolin herramienta para añadir repositorios kali linux]]

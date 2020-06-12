@@ -1,1 +1,3 @@
-nnoremap <buffer> <F5> :w<CR> :!clear && go build % && ./%:p<CR>
+nnoremap <buffer> <F2> :Autoformat<CR>
+nnoremap <buffer> <F5> :w<CR>:te go buil % && ./%:p<CR>i
+

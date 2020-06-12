@@ -1,0 +1,52 @@
+El servidor se puede instalar en cualquier sistema operativo pero siempre hay que
+tener un detalle en la cabeza menos es mas. dependiendo de la plataforma que tengas
+que soportar te convendra uno u otro.
+1. Sistemas operativos dos grandes ramas:
+    1. UNIX-LINUX lo general
+    2. WINDOWS algo especifico
+2. Redes:
+    1. Clasificacion de Redes según su tamaño:
+        1. *PAN o red personal*. Red entre dos dispositivos
+        2. *LAN o red local*. La que podemos tener en nuestras casas
+        3. *MAN o red urbana*. Esta red conecta los edificios de una ciudad entre si.
+        4. *WAN o red mundial o extensa*. esta red es la que conecta todas las redes MAN.
+    2. Tipos de redes ethernet:
+        1. redes:
+            1. Fast ethernet
+            2. Giga ethernet
+        2. Estandares:
+            1. 802.3
+            2. 802.3a
+            3. 802.3c
+            4. 802.3e
+            5. 802.3i
+            6. 802.3u
+            7. 802.3y
+            8. 802.3ab
+            9. 802.11 (wifi)
+            10. 802.15 (bluetooth)
+        3. Topologia:
+            - La manera que se instalan esas redes para buscar que sean mas economicos
+            1. *Topología en bus*: Todas al mismo medio de transmision
+            2. *Topología en anillo*: Cada estación se conecta a la siguiente.
+            3. *Topología de estrella*: Todas estan conectadas a un concentrado central.
+            4. *Topología en malla*: Todas conectados entre si.
+3. TCP/IP:
+    1. *protocolo TCP/IP*: Es el protocolo que nos dice como conectar ordenadores.
+    2. *Estructura de TCP/IP*:
+        1. *Capa de aplicación*
+        2. *Capa de transporte*
+        3. *Capa de internet*
+        4. *Capa de enlace*
+    3. *Direccionamiento IPv4*:
+        - Son las direcciones ip de toda la vida, la que asignamos para acceder a ella.
+    4. *Tipos de redes*:
+        - Tenemos clase A, B, C, D, E
+          - Dentro tenemos tres grupos.
+            1. Publicas
+            2. Privadas
+            3. Reservadas
+    5. *IPv6*:
+        - Al no llegar al limite de ip con IPv4 tuvieron que sacar IPv6 de 128 bits
+4. *Cliente servidor*:
+    - Debe de haber comunicación ente dos ordenadores.

@@ -1,0 +1,12 @@
+= Fuentes =
+[[https://wwwhatsnew.com/]]
+[[https://www.genbeta.com/]]
+[[https://www.xatakamovil.com/]]
+[[https://www.basquecybersecurity.eus/es/|organismo de seguridad]]
+[[https://www.spri.eus/|otro organismo de seguridad suelen montar cursos etc]]
+[[https://www.incibe.es/|organismo de seguridad española 'incibe']]
+=== apuntes ===
+*Triada de la seguridad*
+- Confidencialidad
+- Integridad
+- Accesibilidad

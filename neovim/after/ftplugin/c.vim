@@ -17,3 +17,4 @@ nnoremap <buffer> <F6> :w<CR>:!gcc -std=c11 -lm % -g -o /tmp/debug.out<CR>:VBGst
 nnoremap <buffer> <F7> :VBGcontinue<CR>
 nnoremap <buffer> <F8> :VBGstepOver<CR>
 nnoremap <buffer> <F9> :VBGtoggleBreakpointThisLine<CR>
+setlocal commentstring=//\ %s

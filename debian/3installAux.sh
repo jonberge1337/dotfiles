@@ -32,6 +32,10 @@ sudo aptitude install clang-format -y
 sudo aptitude install xclip -y
 sudo aptitude install telegram-desktop -y
 sudo aptitude install perl-doc -y
+sudo aptitude install exuberant-ctags -y
+sudo aptitude install cmake -y
+#psmisc para killall
+sudo aptitude install psmisc -y
 
 sudo aptitude install ruby-neovim -y
 #sudo npm install -g neovim
