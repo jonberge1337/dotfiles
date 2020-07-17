@@ -1,4 +1,11 @@
 = vim =
+== instalacion ==
+{{{bash
+./configure --with-features=huge --enable-multibyte --enable-rubyinterp=yes --enable-python3interp=yes --enable-perlinterp=yes --enable-luainterp=yes --enable-cscope --with-x
+
+make -j `nproc`
+sudo make install
+}}}
 == ale ==
 == vim-autoformat ==
 == ncm2 ==
