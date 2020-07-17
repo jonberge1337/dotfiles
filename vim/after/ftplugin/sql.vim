@@ -1,1 +1,1 @@
-nnoremap <buffer> <F2> :call CocAction('format')<CR>
+nnoremap <buffer> <F2> :Autoformat<CR>

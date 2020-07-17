@@ -1,1 +1,1 @@
-nnoremap <buffer> <F2> :CocCommand prettier.formatFile<CR>
+nnoremap <buffer> <F2> :Autoformat<CR>
