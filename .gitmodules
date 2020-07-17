@@ -1,0 +1,63 @@
+[submodule "vim/pack/default/start/auto-pairs"]
+	path = vim/pack/default/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/pack/default/start/ctrlp.vim"]
+	path = vim/pack/default/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/pack/default/start/editorconfig-vim"]
+	path = vim/pack/default/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
+[submodule "vim/pack/default/start/nerdtree"]
+	path = vim/pack/default/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "vim/pack/default/start/vim-commentary"]
+	path = vim/pack/default/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/pack/default/start/vim-devicons"]
+	path = vim/pack/default/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons
+[submodule "vim/pack/default/start/vim-polyglot"]
+	path = vim/pack/default/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
+[submodule "vim/pack/default/start/vim-surround"]
+	path = vim/pack/default/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/pack/default/start/vimwiki"]
+	path = vim/pack/default/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki
+[submodule "vim/pack/default/start/tagbar"]
+	path = vim/pack/default/start/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "vim/pack/default/start/vim-autoformat"]
+	path = vim/pack/default/start/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat
+[submodule "vim/pack/lightline/start/lightline.vim"]
+	path = vim/pack/lightline/start/lightline.vim
+	url = https://github.com/szorfein/lightline.vim
+[submodule "vim/pack/lightline/start/lightline-bufferline"]
+	path = vim/pack/lightline/start/lightline-bufferline
+	url = https://github.com/mengelbrecht/lightline-bufferline
+[submodule "vim/pack/lightline/start/lightline-gruvbox.vim"]
+	path = vim/pack/lightline/start/lightline-gruvbox.vim
+	url = https://github.com/shinchu/lightline-gruvbox.vim
+[submodule "vim/pack/lsp/start/asyncomplete-buffer.vim"]
+	path = vim/pack/lsp/start/asyncomplete-buffer.vim
+	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
+[submodule "vim/pack/lsp/start/asyncomplete-lsp.vim"]
+	path = vim/pack/lsp/start/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule "vim/pack/lsp/start/asyncomplete-ultisnips.vim"]
+	path = vim/pack/lsp/start/asyncomplete-ultisnips.vim
+	url = https://github.com/prabirshrestha/asyncomplete-ultisnips.vim
+[submodule "vim/pack/lsp/start/asyncomplete.vim"]
+	path = vim/pack/lsp/start/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule "vim/pack/lsp/start/ultisnips"]
+	path = vim/pack/lsp/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "vim/pack/lsp/start/vim-lsp"]
+	path = vim/pack/lsp/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "vim/pack/theme/start/gruvbox"]
+	path = vim/pack/theme/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
