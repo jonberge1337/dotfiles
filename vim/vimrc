@@ -44,7 +44,7 @@ let &t_EI = "\<Esc>[2 q"
 
 nnoremap <F2> :Autoformat<CR>
 if has("gui_running")
-    set guicursor+=a:blinkon0
+    set guicursor+=a:blinkon0 "cursor sin parpadeo
     set guifont=DejaVuSansMono\ Nerd\ Font\ 12
-    set guioptions=
+    set guioptions= "no menu interfaces
 endif
