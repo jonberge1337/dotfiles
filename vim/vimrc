@@ -43,3 +43,8 @@ let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
 
 nnoremap <F2> :Autoformat<CR>
+if has("gui_running")
+    set guicursor+=a:blinkon0
+    set guifont=DejaVuSansMono\ Nerd\ Font\ 12
+    set guioptions=
+endif
