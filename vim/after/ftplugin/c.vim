@@ -9,7 +9,6 @@ function EvalCurrentWord() abort
     execute "VBGeval ".l:wordValue
 endfunction
 
-nnoremap <buffer> <F2> :Autoformat<CR>
 nnoremap <buffer> <F3> :call GetValueVBG()<CR>
 nnoremap <buffer> <F4> :call EvalCurrentWord()<CR>
 nnoremap <buffer> <F5> :w<CR>:!gcc -std=c11 -lm % -o %:r.out && ./%:r.out<CR>
