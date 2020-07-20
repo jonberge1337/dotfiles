@@ -61,3 +61,6 @@
 [submodule "vim/pack/theme/start/gruvbox"]
 	path = vim/pack/theme/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
+[submodule "vim/pack/default/start/neoformat"]
+	path = vim/pack/default/start/neoformat
+	url = https://github.com/sbdchd/neoformat
