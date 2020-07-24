@@ -1,0 +1,11 @@
+AccessModifierOffset: -4
+AfterFunction: true
+AlignTrailingComments: true
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+BreakBeforeBinaryOperators: false
+IndentWidth: 8
+SortIncludes: false
+NamespaceIndentation: All
+UseTab: Always
