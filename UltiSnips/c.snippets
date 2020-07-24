@@ -71,17 +71,17 @@ fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%
 endsnippet
 
 snippet if "if (){ .. }"
-	if (${1:true}) {
-		${0:${VISUAL}}
-	}
+if (${1:true}) {
+	${0:${VISUAL}}
+}
 endsnippet
 
 snippet ife "if (){..} else{}"
-	if (${1:true}) {
-		${2:${VISUAL}}
-	} else {
-		${0}
-	}
+if (${1:true}) {
+	${2:${VISUAL}}
+} else {
+	${0}
+}
 endsnippet
 
 snippet eli "else if .. (eli)"

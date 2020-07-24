@@ -1,5 +1,4 @@
 AccessModifierOffset: -4
-AfterFunction: true
 AlignTrailingComments: true
 AllowShortFunctionsOnASingleLine: false
 AllowShortIfStatementsOnASingleLine: true
