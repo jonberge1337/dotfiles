@@ -12,6 +12,10 @@ set backspace=indent,eol,start "Para poder borrar con backspace
 filetype indent plugin on
 syntax on
 
+if !isdirectory($HOME."/.vim/undodir")
+    call mkdir($HOME."/.vim/undodir", "p")
+endif
+
 set undofile
 set undodir=~/.vim/undodir
 
