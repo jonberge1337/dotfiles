@@ -64,3 +64,6 @@
 [submodule "vim/pack/default/start/neoformat"]
 	path = vim/pack/default/start/neoformat
 	url = https://github.com/sbdchd/neoformat
+[submodule "vim/pack/default/start/vim-highlightedyank"]
+	path = vim/pack/default/start/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank
