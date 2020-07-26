@@ -23,8 +23,8 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle gentoo/gentoo-zsh-completions
 
 # Load the theme.
-#antigen theme agnoster
-antigen theme robbyrussell
+antigen theme agnoster
+# antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
