@@ -6,20 +6,5 @@
 make -j `nproc`
 sudo make install
 }}}
-== ale ==
-== vim-autoformat ==
-== ncm2 ==
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
-" Plug 'ncm2/ncm2-syntax' | Plug 'Shougo/neco-syntax'
-Plug 'ncm2/ncm2-ultisnips'
-Plug 'ncm2/ncm2-vim-lsp'
-Plug 'yuki-ycino/ncm2-dictionary'
-
-autocmd BufEnter * call ncm2#enable_for_buffer()
-let ncm2#complete_length = [[1, 1]]
-let ncm2#popup_delay = 0
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-----
+== calcular ==
+En modo insert {{{<C-r>=}}}
