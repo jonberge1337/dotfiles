@@ -8,6 +8,7 @@ set wildmenu "Autocompletado menu
 set mouse=a "Soporte mouse
 set cursorline "Resalta la linea que estoy
 set backspace=indent,eol,start "Para poder borrar con backspace
+set clipboard=unnamedplus "Cipboard principal para todo
 
 filetype indent plugin on
 syntax on
