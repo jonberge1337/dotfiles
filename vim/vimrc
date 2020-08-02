@@ -47,6 +47,7 @@ let mapleader = ","
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
 
+tnoremap <Esc> <C-\><C-n>
 nnoremap <F2> :Neoformat<CR>
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
