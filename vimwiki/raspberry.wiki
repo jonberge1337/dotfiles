@@ -13,13 +13,15 @@ udisksctl mount -b /dev/sdb1
 cd /media/jb/boot
 touch ssh
 }}}
+
 = pi hole =
 - Instalacion pi hole
 {{{bash
 curl -sSL https://install.pi-hole.net | bash
 }}}
 - url pi-hole https://ip/admin
-- [[https://192.168.0.15/admin]]
+- [[https://192.168.0.100/admin]]
+
 = ip estatica =
 - añadimos al archivo /etc/dhcpcd.conf
 {{{bash
