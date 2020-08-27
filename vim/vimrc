@@ -49,8 +49,14 @@ let &t_EI = "\<Esc>[2 q"
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <F2> :Neoformat<CR>
+nnoremap <F11> :NERDTreeToggle<CR>
+nnoremap <F12> :TagbarToggle<CR>
+nnoremap <C-l> :bn<CR>
+nnoremap <C-h> :bp<CR>
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
-    set guifont=DejaVuSansMono\ Nerd\ Font\ 12
     set guioptions= "no menu interfaces
+    if has('unix')
+        set guifont=DejaVuSansMono\ Nerd\ Font\ 13
+    endif
 endif
