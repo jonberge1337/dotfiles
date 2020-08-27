@@ -21,6 +21,6 @@ indent_style = tab
 [*.{md,txt}]
 trim_trailing_whitespace = false
 
-[*.{html,xml,xhtml,yml,js,css}]
+[*.{html,xml,xhtml,yml,js,css,json}]
 indent_style = tab
 indent_size = 2
