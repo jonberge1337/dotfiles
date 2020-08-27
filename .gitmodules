@@ -67,3 +67,9 @@
 [submodule "vim/pack/lightline/start/lightline.vim"]
 	path = vim/pack/lightline/start/lightline.vim
 	url = https://github.com/itchyny/lightline.vim
+[submodule "vim/pack/debugger/start/vim-vebugger"]
+	path = vim/pack/debugger/start/vim-vebugger
+	url = https://github.com/idanarye/vim-vebugger
+[submodule "vim/pack/debugger/start/vimproc.vim"]
+	path = vim/pack/debugger/start/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim

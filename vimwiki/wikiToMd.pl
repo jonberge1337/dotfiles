@@ -2,7 +2,12 @@
 
 use strict;
 use warnings;
-use feature qw(say);
+use v5.30.0;
+
+if (not @ARGV) {
+	say "./$0 <file>";
+	exit(1);
+}
 
 foreach my $file (@ARGV) {
     if ( -f $file && $file =~ /wiki$/ ) {
