@@ -51,8 +51,9 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <F2> :Neoformat<CR>
 nnoremap <F11> :NERDTreeToggle<CR>
 nnoremap <F12> :TagbarToggle<CR>
-nnoremap <C-l> :bn<CR>
-nnoremap <C-h> :bp<CR>
+nnoremap <silent> <C-l> :bn!<CR>
+nnoremap <silent> <C-h> :bp!<CR>
+nnoremap ññ :b#<CR>
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
     set guioptions= "no menu interfaces
