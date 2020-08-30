@@ -54,6 +54,8 @@ nnoremap <F12> :TagbarToggle<CR>
 nnoremap <silent> <C-l> :bn!<CR>
 nnoremap <silent> <C-h> :bp!<CR>
 nnoremap ññ :b#<CR>
+nnoremap <leader>q :bd<CR>
+nnoremap <leader>Q :bd!<CR>
 
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
