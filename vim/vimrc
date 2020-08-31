@@ -48,7 +48,6 @@ let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
 
 tnoremap <Esc> <C-\><C-n>
-nnoremap <F2> :Neoformat<CR>
 nnoremap <F11> :NERDTreeToggle<CR>
 nnoremap <F12> :TagbarToggle<CR>
 nnoremap <silent> <C-l> :bn!<CR>
@@ -56,6 +55,19 @@ nnoremap <silent> <C-h> :bp!<CR>
 nnoremap ññ :b#<CR>
 nnoremap <leader>q :bd<CR>
 nnoremap <leader>Q :bd!<CR>
+
+function Formatear()
+    if &formatprg != ""
+        let l:pos = getpos(".")
+        exe 'norm! gggqG'
+        call setpos(".", pos)
+    else
+        echo 'No tienes definido formatprg'
+    endif
+endfunction
+
+nnoremap gq% :call Formatear()<CR>
+
 
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
