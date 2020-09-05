@@ -23,6 +23,7 @@ set undodir=~/.vim/undodir
 set noswapfile "desactiva los archivos Swap
 set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
 set nowritebackup "no se crean respaldos temporales al guardar archivos
+set nowrap "Para que la linea se quede entera
 
 set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
@@ -69,6 +70,37 @@ function Formatear()
 endfunction
 
 nnoremap gq% :call Formatear()<CR>
+">>>
+
+" Sesiones <<<
+
+if !isdirectory($HOME."/.vim/sessions")
+    call mkdir($HOME."/.vim/sessions", "p")
+endif
+
+au VimLeave * call VimLeave()
+au VimEnter * call VimEnter()
+let g:PathToSessions = $HOME . "/.vim/sessions/"
+
+function! VimEnter()
+    if argc() == 0
+        let LoadLastSession = confirm("Restore last session?", "&Yes\n&No")
+        if LoadLastSession == 1
+            exe "source " . g:PathToSessions . "LastSession.vim"
+        endif
+    endif
+endfunction
+
+function! VimLeave(...)
+    exe "NERDTreeClose"
+    exe "mksession! " . g:PathToSessions . "LastSession.vim"
+    if a:0 != ""
+        execute "mksession! " . g:PathToSessions . a:0 . ".vim"
+    endif
+endfunction
+
+" A command for setting the session name
+command! -nargs=1 SaveSession :call VimLeave(<args>)
 ">>>
 
 if has("gui_running")

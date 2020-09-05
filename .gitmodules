@@ -70,9 +70,6 @@
 [submodule "vim/pack/debugger/start/vimproc.vim"]
 	path = vim/pack/debugger/start/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
-[submodule "vim/pack/default/start/vim-session"]
-	path = vim/pack/default/start/vim-session
-	url = https://github.com/xolox/vim-session
 [submodule "vim/pack/default/vim-misc"]
 	path = vim/pack/default/vim-misc
 	url = https://github.com/xolox/vim-misc
