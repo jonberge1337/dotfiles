@@ -70,3 +70,9 @@
 [submodule "vim/pack/default/vim-misc"]
 	path = vim/pack/default/vim-misc
 	url = https://github.com/xolox/vim-misc
+[submodule "vim/pack/default/start/fzf"]
+	path = vim/pack/default/start/fzf
+	url = https://github.com/junegunn/fzf
+[submodule "vim/pack/default/start/fzf.vim"]
+	path = vim/pack/default/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
