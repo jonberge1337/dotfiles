@@ -1,10 +1,10 @@
-function GetValueVBG()
+function! GetValueVBG()
     let l:line = input('Enter value: ')
     let l:wordValue = expand("<cword>")
     execute "VBGexecute " . l:wordValue . " = " . l:line
 endfunction
 
-function EvalCurrentWord() abort
+function! EvalCurrentWord() abort
     let l:wordValue = expand("<cword>")
     execute "VBGeval ".l:wordValue
 endfunction
@@ -17,6 +17,7 @@ nnoremap <buffer> <F7> :VBGcontinue<CR>
 nnoremap <buffer> <F8> :VBGstepOver<CR>
 nnoremap <buffer> <F9> :VBGtoggleBreakpointThisLine<CR>
 
+setlocal foldmethod=syntax
 if executable('clang-format')
     setlocal formatprg=clang-format
 endif
