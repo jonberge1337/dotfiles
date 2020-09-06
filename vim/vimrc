@@ -24,6 +24,7 @@ set noswapfile "desactiva los archivos Swap
 set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
 set nowritebackup "no se crean respaldos temporales al guardar archivos
 set nowrap "Para que la linea se quede entera
+set nofoldenable "Al iniciar todo desplegado
 
 set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
