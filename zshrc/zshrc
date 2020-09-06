@@ -20,6 +20,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle hlissner/zsh-autopair
 antigen bundle zdharma/history-search-multi-word
 antigen bundle chrissicool/zsh-256color
+antigen bundle wfxr/forgit
 
 # Load the theme.
 antigen theme agnoster
