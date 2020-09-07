@@ -64,3 +64,7 @@ PERL_LOCAL_LIB_ROOT="/home/jb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT
 PERL_MB_OPT="--install_base \"/home/jb/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/jb/perl5"; export PERL_MM_OPT;
 # PERL5LIB="."; export PERL5LIB;
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND="find -type f | sed 's/\.\///'"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview '~/.vim/pack/default/start/fzf.vim/bin/preview.sh {}'"
