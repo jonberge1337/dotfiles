@@ -8,3 +8,5 @@ elseif executable('cat')
                 \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse',
                 \ '--info=inline', '--preview', 'cat {}']}, <bang>0)
 endif
+
+nnoremap <C-p> :Files<CR>
