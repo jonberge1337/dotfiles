@@ -94,9 +94,9 @@ endfunction
 
 function! VimLeave(...)
     exe "NERDTreeClose"
-    exe "mksession! " . g:PathToSessions . "LastSession.vim"
+    exe "Obsession " . g:PathToSessions . "LastSession.vim"
     if a:0 != ""
-        execute "mksession! " . g:PathToSessions . a:0 . ".vim"
+        execute "Obsession " . g:PathToSessions . a:0 . ".vim"
     endif
 endfunction
 
