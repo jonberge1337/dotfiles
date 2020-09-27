@@ -1,0 +1,3 @@
+[[https://crysol.org/recipe/2005-10-10/netcat-la-navaja-suiza-de-tcp-ip.html|cosas que se pueden hacer con netcat]]
+[[https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md|reverse shell]]
+[[https://www.lawebdelprogramador.com/pdf/11497-netcat.html|pdf lawebprogramador]]
