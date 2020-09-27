@@ -38,21 +38,33 @@ export EDITOR="/usr/local/bin/vim"
 export VISUAL="/usr/local/bin/vim"
 export PATH="/home/jb/.local/bin/":$PATH
 alias eguraldia="curl wttr.in"
+alias tb="netcat termbin.com 9999"
+alias tbc="netcat termbin.com 9999 | xclip -selection c"
 #source /home/jb/.cargo/env
 
-transfer() {
-    if [ $# -eq 0 ]; then
-        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
+transfer(){
+    if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;
         return 1;
-    fi
-    tmpfile=$( mktemp -t transferXXX );
-    if tty -s;
-    then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g');
-        curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile;
-    else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ;
     fi;
-    cat $tmpfile;
-    rm -f $tmpfile;
+    if tty -s;
+    then file="$1";
+        file_name=$(basename "$file");
+        if [ ! -e "$file" ];then
+            echo "$file: No such file or directory">&2;
+            return 1;
+        fi;
+        if [ -d "$file" ];then
+            file_name="$file_name.zip" ,;
+            (cd "$file"&&zip -r -q - .)|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null,;
+        else;
+            cat "$file"|curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;
+        fi;
+    else file_name=$1;
+        curl --progress-bar --upload-file "-" "https://transfer.sh/$file_name"|tee /dev/null;
+    fi;
+}
+trc() {
+    transfer $1 | xclip -selection c
 }
 subirAsciinema() {
     curl -v -u $USER:$(cat ~/.config/asciinema/install-id) https://asciinema.org/api/asciicasts -F asciicast=@"$1"
@@ -66,5 +78,6 @@ PERL_MM_OPT="INSTALL_BASE=/home/jb/perl5"; export PERL_MM_OPT;
 # PERL5LIB="."; export PERL5LIB;
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="find -type f | sed 's/\.\///'"
+# export FZF_DEFAULT_COMMAND="find -type f | sed 's/\.\///'"
+export FZF_DEFAULT_COMMAND="fdfind --type f --hidden"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --preview '~/.vim/pack/default/start/fzf.vim/bin/preview.sh {}'"
