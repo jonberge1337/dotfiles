@@ -26,6 +26,7 @@ bindsym $mod+Shift+Escape exec pkill -15 Xorg
 # bindsym Print exec scrot ~/Pictures/scrot-%Y-%m-%d-%H-%M-%S.png
 bindsym Print --release exec --no-startup-id "scrot 'scrot-%d-%m-%Y_%H:%M:%S_$wx$h.png' --exec 'mv $f ~/Pictures/'"
 bindsym $mod+Print --release exec --no-startup-id "scrot --select 'scrot-%d-%m-%Y_%H:%M:%S_$wx$h.png' --exec 'mv $f ~/Pictures/'"
+bindsym $mod+Shift+Print --release exec --no-startup-id "scrot --select '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f && rm $f'"
 # bindsym $mod+Print exec scrot -s ~/Pictures/scrot-%Y-%m-%d-%H-%M-%S.png
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
