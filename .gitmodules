@@ -28,24 +28,6 @@
 [submodule "vim/pack/default/start/vim-autoformat"]
 	path = vim/pack/default/start/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat
-[submodule "vim/pack/lsp/start/asyncomplete-buffer.vim"]
-	path = vim/pack/lsp/start/asyncomplete-buffer.vim
-	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
-[submodule "vim/pack/lsp/start/asyncomplete-lsp.vim"]
-	path = vim/pack/lsp/start/asyncomplete-lsp.vim
-	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
-[submodule "vim/pack/lsp/start/asyncomplete-ultisnips.vim"]
-	path = vim/pack/lsp/start/asyncomplete-ultisnips.vim
-	url = https://github.com/prabirshrestha/asyncomplete-ultisnips.vim
-[submodule "vim/pack/lsp/start/asyncomplete.vim"]
-	path = vim/pack/lsp/start/asyncomplete.vim
-	url = https://github.com/prabirshrestha/asyncomplete.vim
-[submodule "vim/pack/lsp/start/ultisnips"]
-	path = vim/pack/lsp/start/ultisnips
-	url = https://github.com/SirVer/ultisnips
-[submodule "vim/pack/lsp/start/vim-lsp"]
-	path = vim/pack/lsp/start/vim-lsp
-	url = https://github.com/prabirshrestha/vim-lsp
 [submodule "vim/pack/theme/start/gruvbox"]
 	path = vim/pack/theme/start/gruvbox
 	url = https://github.com/morhetz/gruvbox
@@ -73,3 +55,9 @@
 [submodule "vim/pack/default/start/vim-airline"]
 	path = vim/pack/default/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/pack/lsp/start/coc.nvim"]
+	path = vim/pack/lsp/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+[submodule "vim/pack/git/start/vim-fugitive"]
+	path = vim/pack/git/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
