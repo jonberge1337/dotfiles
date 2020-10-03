@@ -28,12 +28,6 @@
 [submodule "vim/pack/default/start/vim-autoformat"]
 	path = vim/pack/default/start/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat
-[submodule "vim/pack/lightline/start/lightline-bufferline"]
-	path = vim/pack/lightline/start/lightline-bufferline
-	url = https://github.com/mengelbrecht/lightline-bufferline
-[submodule "vim/pack/lightline/start/lightline-gruvbox.vim"]
-	path = vim/pack/lightline/start/lightline-gruvbox.vim
-	url = https://github.com/shinchu/lightline-gruvbox.vim
 [submodule "vim/pack/lsp/start/asyncomplete-buffer.vim"]
 	path = vim/pack/lsp/start/asyncomplete-buffer.vim
 	url = https://github.com/prabirshrestha/asyncomplete-buffer.vim
@@ -58,9 +52,6 @@
 [submodule "vim/pack/default/start/vim-highlightedyank"]
 	path = vim/pack/default/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank
-[submodule "vim/pack/lightline/start/lightline.vim"]
-	path = vim/pack/lightline/start/lightline.vim
-	url = https://github.com/itchyny/lightline.vim
 [submodule "vim/pack/debugger/start/vim-vebugger"]
 	path = vim/pack/debugger/start/vim-vebugger
 	url = https://github.com/idanarye/vim-vebugger
@@ -79,3 +70,6 @@
 [submodule "vim/pack/default/start/vim-obsession"]
 	path = vim/pack/default/start/vim-obsession
 	url = https://github.com/tpope/vim-obsession
+[submodule "vim/pack/default/start/vim-airline"]
+	path = vim/pack/default/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
