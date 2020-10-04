@@ -1,3 +1,4 @@
+" Config <<<
 set nocompatible
 set number
 set relativenumber
@@ -9,6 +10,8 @@ set mouse=a "Soporte mouse
 set cursorline "Resalta la linea que estoy
 set backspace=indent,eol,start "Para poder borrar con backspace
 set clipboard=unnamedplus "Cipboard principal para todo
+set encoding=utf-8  " The encoding displayed.
+set fileencoding=utf-8  " The encoding written to file.
 
 filetype indent plugin on
 syntax on
@@ -32,6 +35,12 @@ set hlsearch    "Resalta las busquedas
 
 colorscheme gruvbox
 
+let mapleader = ","
+let &t_SI = "\<Esc>[6 q"
+let &t_EI = "\<Esc>[2 q"
+" >>>
+
+" Atajos <<<
 " Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos <<<
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
 cnoreabbrev W w
@@ -46,18 +55,23 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 " >>>
 
-let mapleader = ","
-let &t_SI = "\<Esc>[6 q"
-let &t_EI = "\<Esc>[2 q"
-
 tnoremap <Esc> <C-\><C-n>
 nnoremap <F11> :NERDTreeToggle<CR>
 nnoremap <F12> :TagbarToggle<CR>
+" Buffers <<<
 nnoremap <silent> <C-l> :bn!<CR>
 nnoremap <silent> <C-h> :bp!<CR>
 nnoremap ññ :b#<CR>
-nnoremap <leader>q :bd<CR>
-nnoremap <leader>Q :bd!<CR>
+nnoremap ñd :bd<CR>
+nnoremap ñD :bd!<CR>
+" >>>
+nnoremap <C-p> :Files<CR>
+nnoremap ñh :noh<CR>
+" Vimrc <<<
+nnoremap ñv :e $MYVIMRC<CR>
+nnoremap ñV :so $MYVIMRC<CR>
+" >>>
+" >>>
 
 " format file <<<
 function Formatear()
@@ -104,6 +118,7 @@ endfunction
 command! -nargs=1 SaveSession :call VimLeave(<args>)
 ">>>
 
+" Gui config <<<
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
     set guioptions= "no menu interfaces
@@ -111,5 +126,6 @@ if has("gui_running")
         set guifont=DejaVuSansMono\ Nerd\ Font\ 13
     endif
 endif
+" >>>
 
 " vim: foldmethod=marker foldmarker=<<<,>>>
