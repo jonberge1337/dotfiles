@@ -11,4 +11,6 @@
 [[c]]
 [[raspberry]]
 [[Herramientas hacking]]
+[[netcat]]
+[[ffmpeg]]
 [[digispark]]

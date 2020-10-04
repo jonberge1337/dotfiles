@@ -1,0 +1,83 @@
+=== Quitar subtitulos ===
+{{{bash
+# -sn == disable subtitules -c == codec
+ffmpeg -i input.mkv -sn -c copy output.mkv
+}}}
+=== Cortar video ===
+{{{bash
+# -ss == cuando empieza -t el tiempo que va a durar
+ffmpeg -ss 00:00:30.0 -i input.wmv -c copy -t 00:00:10.0 output.wmv
+ffmpeg -ss 30 -i input.wmv -c copy -t 10 output.wmv
+}}}
+=== Extraer audio ===
+{{{bash
+ffmpeg -i input.mp4 -acodec copy output.mp3
+}}}
+=== Convertir audios ===
+==== WAV - Waveform Audio File Format ====
+===== wav to mp3 =====
+{{{bash
+ffmpeg -i audio.wav -acodec libmp3lame audio.mp3
+}}}
+===== wav to ogg =====
+{{{bash
+ffmpeg -i audio.wav  -acodec libvorbis audio.ogg
+}}}
+===== wav to aac =====
+{{{bash
+ffmpeg -i audio.wav  -acodec libfaac audio.aac
+}}}
+===== wav to ac3 =====
+{{{bash
+ffmpeg -i audio.wav -acodec ac3 audio.mp3
+}}}
+===== ogg to mp3 =====
+{{{bash
+ffmpeg -i audio.ogg -acodec libmp3lame audio.mp3
+}}}
+===== ogg to wav =====
+{{{bash
+ffmpeg -i audio.ogg audio.wav
+}}}
+===== ogg to aac =====
+{{{bash
+ffmpeg -i audio.ogg  -acodec libfaac audio.aac
+}}}
+===== ogg to ac3 =====
+{{{bash
+ffmpeg -i audio.ogg -acodec ac3 audio.ac3
+}}}
+==== AC3 - Acoustic Coder 3 ====
+===== ac3 to mp3 =====
+{{{bash
+ffmpeg -i audio.ac3 -acodec libmp3lame audio.mp3
+}}}
+===== ac3 to wav =====
+{{{bash
+ffmpeg -i audio.ac3 audio.wav
+}}}
+===== ac3 to aac =====
+{{{bash
+ffmpeg -i audio.ac3  -acodec libfaac audio.aac
+}}}
+===== ac3 to ogg =====
+{{{bash
+ffmpeg -i audio.ac3 -acodec libvorbis audio.ogg
+}}}
+==== AAC - Advanced Audio Coding ====
+===== aac to mp3 =====
+{{{bash
+ffmpeg -i audio.aac -acodec libmp3lame audio.mp3
+}}}
+===== aac to wav =====
+{{{bash
+ffmpeg -i audio.aac audio.wav
+}}}
+===== aac to ac3 =====
+{{{bash
+ffmpeg -i audio.aac  -acodec ac3 audio.ac3
+}}}
+===== aac to ogg =====
+{{{bash
+ffmpeg -i audio.aac -libvorbis audio.ogg
+}}}
