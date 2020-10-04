@@ -1,9 +1,6 @@
 [submodule "vim/pack/default/start/auto-pairs"]
 	path = vim/pack/default/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-[submodule "vim/pack/default/start/editorconfig-vim"]
-	path = vim/pack/default/start/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim
 [submodule "vim/pack/default/start/nerdtree"]
 	path = vim/pack/default/start/nerdtree
 	url = https://github.com/preservim/nerdtree
