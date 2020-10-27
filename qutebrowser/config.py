@@ -1617,7 +1617,7 @@
 ## `:open google qutebrowser`.
 ## Type: Dict
 c.url.searchengines = {
-    'DEFAULT': 'https://www.google.com/search?q={}',
+    'DEFAULT': 'https://www.startpage.com/search?q={}',
     'yt': 'https://www.youtube.com/results?search_query={}',
     "wa": "https://wiki.archlinux.org/?search={}",
     "wes": "https://es.wikipedia.org/wiki/{}",
