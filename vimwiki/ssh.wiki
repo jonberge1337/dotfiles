@@ -1,0 +1,23 @@
+=== ssh ===
+{{{bash
+ssh <usuario>@<direccion>
+}}}
+- Para no volver a repetir la contraseña
+{{{bash
+ssh-keygen
+ssh-copy-id <usuario>@<direccion>
+# o cat ~/.ssh/id_rsa.pub | ssh $username@$ssh_hostk "cat - >> ~/.ssh/authorized_keys"
+}}}
+- Copia disco duro remoto
+{{{bash
+ssh pi@192.168.0.100 "sudo dd if=/dev/mmcblk0 status=progress" | dd of=/tmp/raspberry.img
+}}}
+
+- Para conectarse a termux con ssh
+https://parzibyte.me/blog/2019/07/31/servidor-ssh-termux-android/
+{{{bash
+#iniciamos el servicio en termux
+sshd
+#y despues desde el cliente conectar puerto 8022
+ssh -p 8022 u0_a127@192.168.0.18
+}}}

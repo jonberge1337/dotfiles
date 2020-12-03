@@ -6,3 +6,4 @@
 - [[https://shop.hak5.org/|pagina comprar hardware hacking]]
 - [[https://github.com/LionSec/katoolin|katoolin herramienta para añadir repositorios kali linux]]
 - [[netcat]]
+- [[https://github.com/FDX100/GOD-KILLERhttps://github.com/FDX100/GOD-KILLER|GOD-KILLER(SMS)]]

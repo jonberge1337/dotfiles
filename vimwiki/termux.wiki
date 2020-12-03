@@ -1,0 +1,5 @@
+= termux =
+- Almacenamiento disponible sin root
+{{{bash
+termux-setup-storage #asegurarse que termux tiene permisos de almacenamiento
+}}}

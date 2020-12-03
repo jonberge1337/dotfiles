@@ -1,4 +1,36 @@
-" Config <<<
+" Config {{{
+if !filereadable($HOME."/.vim/autoload/plug.vim")
+    !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" plugins {{{
+call plug#begin($HOME.'/.vim/plugged')
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/tagbar'
+Plug 'machakann/vim-highlightedyank'
+Plug 'vim-scripts/restore_view.vim'
+Plug 'yko/mojo.vim'
+let mojo_highlight_data = 1
+Plug 'stevearc/vim-arduino'
+set viewoptions=cursor,folds,slash,unix
+call plug#end()
+" }}}
 set nocompatible
 set number
 set relativenumber
@@ -28,6 +60,7 @@ set nobackup   "no se crean respaldos permanentes cuando se guarda un archivo
 set nowritebackup "no se crean respaldos temporales al guardar archivos
 set nowrap "Para que la linea se quede entera
 set nofoldenable "Al iniciar todo desplegado
+set noshowmode "Con airline no hace falta modo
 
 set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
@@ -38,10 +71,10 @@ colorscheme gruvbox
 let mapleader = ","
 let &t_SI = "\<Esc>[6 q"
 let &t_EI = "\<Esc>[2 q"
-" >>>
+" }}}
 
-" Atajos <<<
-" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos <<<
+" Atajos {{{
+" Atajos utiles, cuando te equivocas escribiendo alguno de estos comandos {{{
 "ejemplo :w para guardar, si escribes rapido posiblemente escribas :W
 cnoreabbrev W w
 cnoreabbrev W! w!
@@ -53,27 +86,40 @@ cnoreabbrev wQ wq
 cnoreabbrev WQ wq
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-" >>>
+" }}}
 
 tnoremap <Esc> <C-\><C-n>
 nnoremap <F11> :NERDTreeToggle<CR>
 nnoremap <F12> :TagbarToggle<CR>
-" Buffers <<<
+" Buffers {{{
 nnoremap <silent> <C-l> :bn!<CR>
 nnoremap <silent> <C-h> :bp!<CR>
 nnoremap ññ :b#<CR>
 nnoremap ñd :bd<CR>
 nnoremap ñD :bd!<CR>
-" >>>
+" }}}
 nnoremap <C-p> :Files<CR>
 nnoremap ñh :noh<CR>
-" Vimrc <<<
+" Vimrc {{{
 nnoremap ñv :e $MYVIMRC<CR>
 nnoremap ñV :so $MYVIMRC<CR>
-" >>>
-" >>>
+" }}}
+" }}}
 
-" format file <<<
+" Trim space {{{
+function! StripTrailingWhitespace()
+    " Don't strip on these filetypes
+    if &ft =~ 'markdown'
+        %s/\s\s\+$/<br\/>/e
+        return
+    endif
+    %s/\s\+$//e
+endfunction
+
+autocmd BufWritePre * call StripTrailingWhitespace()
+" }}}
+
+" format file {{{
 function Formatear()
     if &formatprg != ""
         let l:pos = getpos(".")
@@ -85,16 +131,67 @@ function Formatear()
 endfunction
 
 nnoremap gq% :call Formatear()<CR>
-">>>
+"}}}
 
-" Sesiones <<<
+" coc {{{
+let g:coc_global_extensions = [
+      \ 'coc-css' ,
+      \ 'coc-html',
+      \ 'coc-sh',
+      \ 'coc-clangd',
+      \ 'coc-perl',
+      \ 'coc-python',
+      \ 'coc-json',
+      \ 'coc-snippets',
+      \ 'coc-vimlsp',
+      \ ]
+set updatetime=0
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocActionAsync('doHover')
+    endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" }}}
+
+" fzf {{{
+
+if executable('bat')
+    command! -bang -nargs=? -complete=dir Files
+                \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse',
+                \ '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']},
+                \ <bang>0)
+elseif executable('cat')
+    command! -bang -nargs=? -complete=dir Files
+                \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse',
+                \ '--info=inline', '--preview', 'cat {}']}, <bang>0)
+endif
+
+nnoremap <C-p> :Files<CR>
+" }}}
+
+" Sesiones {{{
 
 if !isdirectory($HOME."/.vim/sessions")
     call mkdir($HOME."/.vim/sessions", "p")
 endif
 
 au VimLeave * call VimLeave()
-au VimEnter * call VimEnter()
+" au VimEnter * call VimEnter()
 let g:PathToSessions = $HOME . "/.vim/sessions/"
 
 function! VimEnter()
@@ -116,9 +213,9 @@ endfunction
 
 " A command for setting the session name
 command! -nargs=1 SaveSession :call VimLeave(<args>)
-">>>
+"}}}
 
-" Gui config <<<
+" Gui config {{{
 if has("gui_running")
     set guicursor+=a:blinkon0 "cursor sin parpadeo
     set guioptions= "no menu interfaces
@@ -126,6 +223,6 @@ if has("gui_running")
         set guifont=DejaVuSansMono\ Nerd\ Font\ 13
     endif
 endif
-" >>>
+" }}}
 
-" vim: foldmethod=marker foldmarker=<<<,>>>
+" vim: filetype=vim foldmethod=marker

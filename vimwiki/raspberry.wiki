@@ -13,6 +13,20 @@ udisksctl mount -b /dev/sdb1
 cd /media/jb/boot
 touch ssh
 }}}
+- En caso de querer configurar wifi
+{{{bash
+cd /boot/jb/boot
+vim wpa_supplicant.conf
+# Poner lo siguiente en el archivo wpa_supplicant.conf
+country=ES
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+	ssid="e003bc"
+	psk="Z4r4utz!1337"
+	key_mgmt=WPA-PSK
+}
+}}}
 
 = pi hole =
 - Instalacion pi hole
@@ -31,3 +45,4 @@ static ip_address=192.168.0.100/24
 # el gateway puerta de enlace
 static routers=192.168.0.1
 }}}
+

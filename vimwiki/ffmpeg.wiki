@@ -13,6 +13,10 @@ ffmpeg -ss 30 -i input.wmv -c copy -t 10 output.wmv
 {{{bash
 ffmpeg -i input.mp4 -acodec copy output.mp3
 }}}
+=== Grabar pantalla con audio ===
+{{{bash
+ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default output.mkv
+}}}
 === Convertir audios ===
 ==== WAV - Waveform Audio File Format ====
 ===== wav to mp3 =====
