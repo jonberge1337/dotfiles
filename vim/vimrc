@@ -66,6 +66,7 @@ set ignorecase "busquedas no distinguen mayusculas y minusculas
 set incsearch   "Muestra la concordancia de una busqueda mientras escribes.
 set hlsearch    "Resalta las busquedas
 
+set background=dark
 colorscheme gruvbox
 
 let mapleader = ","
