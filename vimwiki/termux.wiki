@@ -1,4 +1,5 @@
 = termux =
+[[https://github.com/adi1090x/termux-omz|tema material]]
 - Almacenamiento disponible sin root
 {{{bash
 termux-setup-storage #asegurarse que termux tiene permisos de almacenamiento
