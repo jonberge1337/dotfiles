@@ -18,4 +18,5 @@
 [[email]]
 [[digispark]]
 [[ssh]]
+[[comandos linux]]
 [[termux]]
