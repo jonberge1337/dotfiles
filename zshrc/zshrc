@@ -42,6 +42,8 @@ alias tb="netcat termbin.com 9999"
 alias tbc="netcat termbin.com 9999 | xclip -selection c"
 #source /home/jb/.cargo/env
 
+vman() { man $* | col -b | vim -c 'set ft=man nomod nolist' -; }
+
 transfer(){
     if [ $# -eq 0 ];then echo "No arguments specified.\nUsage:\n transfer <file|directory>\n ... | transfer <file_name>">&2;
         return 1;
