@@ -39,6 +39,7 @@ sudo aptitude install perl-doc -y
 sudo aptitude install exuberant-ctags -y
 sudo aptitude install cmake -y
 sudo aptitude install pv -y
+sudo aptitude install numlockx -y
 sudo aptitude install firefox-esr -y
 sudo aptitude install firefox-esr-l10n-es-es -y
 #psmisc para killall
