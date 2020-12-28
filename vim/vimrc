@@ -171,7 +171,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " fzf {{{
 
-if executable('bat')
+if executable('batcat') || executable('bat')
     command! -bang -nargs=? -complete=dir Files
                 \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse',
                 \ '--info=inline', '--preview', '~/.vim/plugged/fzf.vim/bin/preview.sh {}']},
