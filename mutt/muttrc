@@ -1,0 +1,23 @@
+source "gpg -dq ~/dotfiles/mutt/passwd.pgp |"
+set from = "jonbergerandi@gmail.com"
+set realname = "Jon Bergerandi"
+set imap_user = "jonbergerandi@gmail.com"
+set imap_pass = $my_pass
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+[Gmail]/Drafts"
+#set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+set smtp_url = "smtp://jonbergerandi@smtp.gmail.com:587/"
+set smtp_pass = $my_pass
+#set editor="nano -t +8"
+set editor="vim +8"
+set timeout = 30
+set mail_check = 5
+set edit_headers=yes
+set sort="reverse-date-received"
+unset imap_passive
+bind index G imap-fetch-mail
+auto_view text/html
