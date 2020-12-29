@@ -15,7 +15,18 @@ ffmpeg -i input.mp4 -acodec copy output.mp3
 }}}
 === Grabar pantalla con audio ===
 {{{bash
-ffmpeg -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0 -f pulse -ac 2 -i default output.mkv
+# -f formato entrada o salida (ej: pulse | x11grab)
+# -i url input
+# -s resolución
+#pactl list sources short (Para ver los dispositivos para el input)
+#0	-i alsa_output.usb-FongLun_KIMU_PRO_201709-00.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+#1	-i alsa_input.usb-FongLun_KIMU_PRO_201709-00.analog-stereo	module-alsa-card.c	s16le 2ch 44100Hz	SUSPENDED
+#2	-i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor	module-alsa-card.c	s16le 2ch 48000Hz	SUSPENDED
+ffmpeg -f x11grab -r 60 -s $(xdpyinfo | grep -i dimensions | awk '{print $2}')\
+-i $(echo $DISPLAY) -vcodec libx264 -preset faster -b:v 5M\
+-f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -q:a 2 -ar 48000 -acodec libmp3lame\
+-f pulse -i alsa_input.usb-FongLun_KIMU_PRO_201709-00.analog-stereo -q:a 2 -ar 44100 -acodec libmp3lame\
+-isync -async 1
 }}}
 === Convertir audios ===
 ==== WAV - Waveform Audio File Format ====

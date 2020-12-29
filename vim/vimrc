@@ -27,7 +27,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'vim-scripts/restore_view.vim'
 Plug 'yko/mojo.vim'
 let mojo_highlight_data = 1
-Plug 'stevearc/vim-arduino'
 set viewoptions=cursor,folds,slash,unix
 call plug#end()
 " }}}

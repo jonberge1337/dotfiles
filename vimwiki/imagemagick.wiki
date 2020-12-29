@@ -1,15 +1,22 @@
 = Imagemagick =
-*Obtener información de una imagen.*
+== Capturas ==
+*Captura de pantalla*
 {{{bash
-identify -ping image.png
-  }}}
-*Obtener aún más información.*
-{{{bash
-identify -verbose image.png
+import -window root screenshot.png
 }}}
-*Conocer la lista de colores utilizados en una imagen.*
+*Captura de pantalla seleccionado rango*
 {{{bash
-identify -list color image.png
+import screenshot.png
+}}}
+== Conversiones ==
+=== Formatos ===
+*Crear un Favicon*
+{{{bash
+convert -colors 256 -resize 16x16 image.jpg favicon.ico
+}}}
+*Texto a imagen*
+{{{bash
+convert TEXT:image.txt image.png
 }}}
 *Convertir una imagen PNG en JPG*
 {{{bash
@@ -27,13 +34,14 @@ mogrify -format png *.jpg
 {{{bash
 convert images*.* archivo.pdf
 }}}
+=== Tamaño ===
 *Cambiar el tamaño de una imagen*
 {{{bash
-convert -resize 48×48 image.png image-mini.png
+convert -resize 48x48 image.png image-mini.png
 }}}
 *Cambiar el tamaño de todas la imágenes de una carpeta*
 {{{bash
-mogrify -resize 48×48 *.png
+mogrify -resize 48x48 *.png
 }}}
 *Cambiar el tamaño de una imagen indicando el ancho*
 {{{bash
@@ -43,26 +51,31 @@ convert -resize 620x image.png image-620.png
 {{{bash
 convert -resize x100 image.png image-100.png
 }}}
-*Crear un Favicon*
-{{{bash
-convert -colors 256 -resize 16×16 image.jpg favicon.ico
-}}}
+=== Color ===
 *Convertir una imagen en color en blanco y negro*
 {{{bash
-convert -type image.jpg image-noir-blanc.jpg
+#true grayscale only:
+convert source.jpg -colorspace Gray destination.jpg
+#true black and white:
+convert source.jpg -monochrome destination.jpg
+#separate into gray channels:
+convert source.jpg -separate destination.jpg
+#However, if you want two colors only (black and white), then you need to threshold. For example, to select the color where above will be white and below will be black.
+convert <input> -threshold xx% <output>
 }}}
 *Añadir un borde transparente de 1 pixel alrededor de una imagen*
 {{{bash
-convert -bordercolor Transparent -border 1×1 image.png image-borde.png
+convert -bordercolor Transparent -border 1x1 image.png image-borde.png
 }}}
 *Añadir un borde negro de 10 pixels alrededor de una imagen*
 {{{bash
-convert -bordercolor #000000 -border 10×10 image.png image-borde.png
+convert -bordercolor "#000000" -border 10x10 image.png image-borde.png
 }}}
 *Crear un negativo de una imagen*
 {{{bash
 convert -negate image.png image-negate.png
 }}}
+=== Rotaciones ===
 *Rotar una imagen en vertical*
 {{{bash
 convert -flip image.png image-inversee.png
@@ -71,7 +84,21 @@ convert -flip image.png image-inversee.png
 {{{bash
 convert -flop image.png image-inversee.png
 }}}
+== Mostrar imagen ==
 *Usar el GUI de ImageMagick*
 {{{bash
 display image.png
+}}}
+== Información ==
+*Obtener información de una imagen.*
+{{{bash
+identify -ping image.png
+  }}}
+*Obtener aún más información.*
+{{{bash
+identify -verbose image.png
+}}}
+*Conocer la lista de colores utilizados en una imagen.*
+{{{bash
+identify -list color image.png
 }}}
