@@ -28,6 +28,15 @@ ffmpeg -f x11grab -r 60 -s $(xdpyinfo | grep -i dimensions | awk '{print $2}')\
 -f pulse -i alsa_input.usb-FongLun_KIMU_PRO_201709-00.analog-stereo -q:a 2 -ar 44100 -acodec libmp3lame\
 -isync -async 1
 }}}
+=== Convertir videos ===
+===== para android =====
+{{{bash
+ffmpeg -i <input> \
+  -c:v libx264 -crf 23 -profile:v baseline -level 3.0 -pix_fmt yuv420p \
+  -c:a aac -ac 2 -b:a 128k \
+  -movflags faststart \
+  output.mp4
+}}}
 === Convertir audios ===
 ==== WAV - Waveform Audio File Format ====
 ===== wav to mp3 =====

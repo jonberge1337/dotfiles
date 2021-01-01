@@ -76,3 +76,18 @@ Si queremos lo controario a lo que buscamos adelante poner !
         {{{bash
             find / -iname "*.mp3" | xargs tar cv
         }}}
+== cut ==
+cut options
+`Trata de caracter a caracter no es el split como awk`
+- -b byte
+- -c caracter
+- -d delimitador
+- -f posición
+{{{bash
+$ lynx -dump -listonly localhost | grep -i saf | cut -c7-
+http://localhost/Safety La Ultima linea de defensa (2020).avi
+}}}
+{{{bash
+$ lynx -dump -listonly localhost | grep -i saf | cut -d " " -f5-
+http://localhost/Safety La Ultima linea de defensa (2020).avi
+}}}

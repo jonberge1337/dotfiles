@@ -12,7 +12,6 @@ set message_cachedir =~/.mutt/cache/bodies
 set certificate_file =~/.mutt/certificates
 set smtp_url = "smtp://jonbergerandi@smtp.gmail.com:587/"
 set smtp_pass = $my_pass
-#set editor="nano -t +8"
 set editor="vim +8"
 set timeout = 30
 set mail_check = 5
